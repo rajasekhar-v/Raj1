@@ -1,0 +1,27 @@
+without password==>start C:\Windows\System32\putty.exe -ssh server_name -l user_name
+
+with password==>start C:\Users\pankmish\Downloads\putty.exe -ssh server_name -l user -pw %1
+
+================================================================================================
+The below command is working for me as-is from inside of a bat file.
+
+"D:\userdata\panshriv\Desktop\putty.exe" "pankaj@10.91.124.171" -pw "mypassword"
+
+My putty.exe is in my desktop
+My username is "pankaj"
+My password is "mypassword"
+===============================================================================================
+here are two ways to do this::
+
+put your password in "" and run in command prompt as
+start C:\software\putty.exe -ssh server_name -l user -pw "MyPassword$1"
+
+OR
+
+Create a file Connection123.bat with below command
+start C:\software\putty.exe -ssh server_name -l user -pw %1
+
+save the file and run the batch file as
+
+start c:\Connection123.bat MyPassword$1
+=======================================================================================================
